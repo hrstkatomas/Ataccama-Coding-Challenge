@@ -6,12 +6,14 @@ import AttributesRow from '../attributesRow/AttributesRow'
 import ValuesRow from '../valuesRow/ValuesRow'
 import KidsRow from '../kidsRow/KidsRow'
 
+import styles from './Table.scss'
+
 
 export default function Table({ records, title = null }) {
   const attributes = Object.keys(records[0].data)
 
   return (
-    <table>
+    <table className={styles.table}>
       <thead>
         <TitleRow title={title} />
         <AttributesRow attributes={attributes} />

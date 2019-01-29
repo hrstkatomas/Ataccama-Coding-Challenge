@@ -1,15 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import Icon from '../icon/Icon'
+import styles from './AttributesRow.scss'
 
 
 export default function AttributesRow({ attributes }) {
   return (
-    <tr>
-      <th>
-        <Icon name="chevron-down" />
-      </th>
+    <tr className={styles.attributes}>
+      <th />
 
       {attributes.map(
         attribute => (

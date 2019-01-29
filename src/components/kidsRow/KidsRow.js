@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 import Table from '../table/Table'
 
+import styles from './KidsRow.scss'
+
 
 export default function KidsRow({ kids }) {
   const title = Object.keys(kids)[0]
@@ -10,7 +12,10 @@ export default function KidsRow({ kids }) {
 
   return (
     <tr>
-      <td colSpan="100%">
+      <td
+        className={styles.padded}
+        colSpan="100%"
+      >
         <Table
           title={title}
           records={kids[title].records}

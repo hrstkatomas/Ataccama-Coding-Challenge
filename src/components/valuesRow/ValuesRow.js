@@ -1,11 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import Icon from '../icon/Icon'
+
 
 export default function ValuesRow({ attributes, values }) {
   return (
     <tr>
-      <td />
+      <td>
+        <Icon name="chevron-down" />
+      </td>
 
       {attributes.map(
         attribute => (
