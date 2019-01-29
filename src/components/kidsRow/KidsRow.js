@@ -10,6 +10,9 @@ export default function KidsRow({ kids }) {
   const title = Object.keys(kids)[0]
   if (!title) return null
 
+  console.log(kids);
+  
+
   return (
     <tr>
       <td

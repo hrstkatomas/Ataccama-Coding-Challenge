@@ -10,6 +10,8 @@ import styles from './Table.scss'
 
 
 export default function Table({ records, title = null }) {
+  if (!records.length) return null
+
   const attributes = Object.keys(records[0].data)
 
   return (

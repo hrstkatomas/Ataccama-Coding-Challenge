@@ -1,12 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import { connect } from 'react-redux'
 
 import Icon from '../icon/Icon'
 
+import { removeObject } from '../../actions/data.actions'
 
-export default function ValuesRow({ attributes, values }) {
+
+function ValuesRow({ attributes, values, removeObject }) {
   return (
-    <tr>
+    <tr onClick={() => removeObject(values)}>
       <td>
         <Icon name="chevron-down" />
       </td>
@@ -26,3 +29,6 @@ ValuesRow.propTypes = {
   attributes: PropTypes.arrayOf(PropTypes.string).isRequired,
   values:     PropTypes.object
 }
+
+
+export default connect(state => ({}), { removeObject })(ValuesRow)

@@ -1,4 +1,4 @@
-import actionFactory, { action, idValueAction } from './actionFactory'
+import actionFactory, { action } from './actionFactory'
 
 
 it('Should compose action object correctly', () => {
@@ -29,13 +29,5 @@ it('Should compose action with value object correctly', () => {
   expect(action('actionType')('value')).toEqual({
     type:  'actionType',
     value: 'value'
-  })
-})
-
-it('Should compose action with value and id object correctly', () => {
-  expect(idValueAction('actionType')('id', 'value')).toEqual({
-    type:  'actionType',
-    value: 'value',
-    id:    'id'
   })
 })
