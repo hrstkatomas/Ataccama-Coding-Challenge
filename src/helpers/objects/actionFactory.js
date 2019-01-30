@@ -24,6 +24,11 @@
 //   }
 // }
 
+/**
+ * Will create factory for factory of redux actions
+ * @param  {...string} args - arguments you would like final functions to have
+ * @returns {Function} factory with action type as argument
+ */
 const actionFactory = (...args) => type => (...values) => args.reduce(
   (acc, arg, i) => ({ ...acc, [arg]: values[i] }),
   { type }
@@ -32,4 +37,9 @@ const actionFactory = (...args) => type => (...values) => args.reduce(
 export default actionFactory
 
 // often used pattern of my actions
+/**
+ * Will create redux action with value argument
+ * @param {string} type - arguments you would like final functions to have
+ * @returns {Function} to trigger redux action
+ */
 export const action = actionFactory('value')

@@ -6,13 +6,11 @@ import Table from '../components/table/Table'
 
 class App extends Component {
   static propTypes = {
-    data:     PropTypes.array,
-    selected: PropTypes.object,
-    expanded: PropTypes.array
+    data: PropTypes.array
   }
 
   render() {
-    const { data, selected, expanded } = this.props
+    const { data } = this.props
 
     return (
       <div>

@@ -31,7 +31,12 @@ function remove(state, object) {
   })
 }
 
-
+/**
+ * Data reducer containing data for visualization
+ * @param {Array} state input state
+ * @param {Object} action state modifier
+ * @returns {Object} new state or current state if action undefined
+ */
 export default function data(state = [], action) {
   switch (action.type) {
     case REMOVE_OBJECT:
