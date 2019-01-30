@@ -1,22 +1,10 @@
 import { REMOVE_OBJECT } from '../actions/data.actions'
 
-import shallowEqual from '../helpers/shallowEqual'
+import shallowEqual from '../helpers/objects/shallowEqual'
+import getTitleOf from '../helpers/kids/getTitleOf'
+import getRecordsOf from '../helpers/kids/getRecordsOf'
+import sliceAtIndex from '../helpers/arrays/sliceAtIndex'
 
-
-function getTitleOf(kids) {
-  return Object.keys(kids)[0]
-}
-
-function getRecordsOf(kids) {
-  return kids[getTitleOf(kids)]?.records || []
-}
-
-function sliceAtIndex(array, index) {
-  return [
-    ...array.slice(0, index),
-    ...array.slice(index + 1)
-  ]
-}
 
 function shallowEqualTo(object) {
   return ({ data }) => shallowEqual(data, object)

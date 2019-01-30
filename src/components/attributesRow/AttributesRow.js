@@ -7,6 +7,7 @@ import styles from './AttributesRow.scss'
 export default function AttributesRow({ attributes }) {
   return (
     <tr className={styles.attributes}>
+      {/* to accomodate expand button */}
       <th />
 
       {attributes.map(
@@ -16,6 +17,9 @@ export default function AttributesRow({ attributes }) {
           </th>
         )
       )}
+
+      {/* to accomodate remove button */}
+      <th />
     </tr>
   )
 }

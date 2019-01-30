@@ -1,17 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
 
-import Icon from '../icon/Icon'
-
-import { removeObject } from '../../actions/data.actions'
+import RemoveButton from '../buttons/removeButton/RemoveButton'
+import ExpandButton from '../buttons/expandButton/ExpandButton'
 
 
-function ValuesRow({ attributes, values, removeObject }) {
+export default function ValuesRow({
+  attributes, values, expanded, hasKids
+}) {
   return (
-    <tr onClick={() => removeObject(values)}>
+    <tr>
       <td>
-        <Icon name="chevron-down" />
+        {hasKids && (
+          <ExpandButton
+            object={values}
+            expanded={expanded}
+          />
+        )}
       </td>
 
       {attributes.map(
@@ -21,14 +26,17 @@ function ValuesRow({ attributes, values, removeObject }) {
           </td>
         )
       )}
+
+      <td>
+        <RemoveButton object={values} />
+      </td>
     </tr>
   )
 }
 
 ValuesRow.propTypes = {
   attributes: PropTypes.arrayOf(PropTypes.string).isRequired,
-  values:     PropTypes.object
+  values:     PropTypes.object,
+  expanded:   PropTypes.bool,
+  hasKids:    PropTypes.bool
 }
-
-
-export default connect(state => ({}), { removeObject })(ValuesRow)

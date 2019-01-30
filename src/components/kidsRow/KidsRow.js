@@ -3,15 +3,15 @@ import PropTypes from 'prop-types'
 
 import Table from '../table/Table'
 
+import hasRecords from '../../helpers/kids/hasRecords'
+import getTitleOf from '../../helpers/kids/getTitleOf'
+import getRecordsOf from '../../helpers/kids/getRecordsOf'
+
 import styles from './KidsRow.scss'
 
 
 export default function KidsRow({ kids }) {
-  const title = Object.keys(kids)[0]
-  if (!title) return null
-
-  console.log(kids);
-  
+  if (!hasRecords(kids)) return null
 
   return (
     <tr>
@@ -20,8 +20,8 @@ export default function KidsRow({ kids }) {
         colSpan="100%"
       >
         <Table
-          title={title}
-          records={kids[title].records}
+          title={getTitleOf(kids)}
+          records={getRecordsOf(kids)}
         />
       </td>
     </tr>

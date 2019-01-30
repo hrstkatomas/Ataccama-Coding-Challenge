@@ -1,4 +1,4 @@
-import { action } from '../helpers/actionFactory'
+import { action } from '../helpers/objects/actionFactory'
 
 
 export const REMOVE_OBJECT = 'REMOVE_OBJECT'

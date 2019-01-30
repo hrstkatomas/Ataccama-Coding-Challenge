@@ -1,4 +1,4 @@
-import { action } from '../helpers/actionFactory'
+import { action } from '../helpers/objects/actionFactory'
 
 
 export const EXPAND_OBJECT = 'EXPAND_OBJECT'
